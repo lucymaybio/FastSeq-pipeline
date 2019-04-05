@@ -7,7 +7,7 @@ from csv import DictReader, DictWriter
 import logging
 import os
 from pathlib import Path
-from subprocess import run, Popen
+from subprocess import run
 import sys
 import subprocess
 import csv
