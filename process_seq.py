@@ -463,6 +463,7 @@ log.info(f"Starting writing final stats...")
 df = pd.DataFrame.from_records(final_stats)
 df.set_index("Sample", inplace=True)
 flipped = df.transpose()
-flipped.to_csv(STATS_OUTPUT_PATH, index_label="Sample")
+reordered = flipped.reindex([*final_stats[0]][1:])
+reordered.to_csv(STATS_OUTPUT_PATH, index_label="Sample")
 
 log.info(f"...end writing stats.")
